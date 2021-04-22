@@ -22,11 +22,7 @@ namespace lab05_ControlTareas.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
+        
         
     }
 }

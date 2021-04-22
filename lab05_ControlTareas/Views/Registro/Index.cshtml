@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Registro";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="card col-12 col-sm-12 col-md-7" style="box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.3); width:40%;">
+
+            <div class="card-body">
+                <form method="post" action="@Url.Action("", "")" class="d-flex flex-column align-items-center text-center">
+
+                    <div class="form-group">
+                        <h3>Registro</h3>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="UserName" placeholder="Usuario" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="Password" placeholder="Contraseña" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Seleccionar Rol</label>
+                        <select class="form-control" name="Role" required>
+                            <option value="ProductManager">Soy Product Manager</option>
+                            <option value="Developer">Soy Developer</option>
+
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Registrarme</button>
+                    </div>
+
+                    <hr />
+
+                    <div class="form-group">
+                        <span>Ya tengo una cuenta, <a href="@Url.Action("", "")" style="color:#6ecadc;">Iniciar Sesion</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="d-none d-sm-none d-md-block col-md-5 svg_register"></div>
+    </div>
+</div>
+
+<style>
+    .card {
+        z-index: 1;
+    }
+
+    .row {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .container-fluid {
+        height: 86vh;
+    }
+
+    .svg_register {
+        width: 100%;
+        height: 100%;
+        background-image: url("/svg/LoginManos.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+</style>
+

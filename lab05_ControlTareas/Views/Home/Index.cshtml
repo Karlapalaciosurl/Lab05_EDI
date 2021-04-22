@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container container_landing">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-7">
+            <h1 class="display-4">Bienvenido a TaskApp</h1>
+            <p class="h3 text-muted">
+                Lleva un mejor control de tus tasks como <span class="texto_sombreado"> Developer </span> o como
+                <span class="texto_sombreado">Product Manager</span> y visualiza todas las tasks agendadas en orden de <span class="texto_sombreado">Prioridad</span>.
+            </p>
+        </div>
+        <div class="d-none d-sm-none d-md-block col-md-5 svg_landing"></div>
+
+    </div>
+</div>
+
+<style>
+    .row {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    .container_landing {
+        height: 86vh;
+    }
+    .texto_sombreado {
+        font-weight: bolder;
+        color: cornflowerblue;
+    }
+    .svg_landing {
+        width:100%;
+        height:100%;
+        background-image: url("/svg/todoList.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+</style>

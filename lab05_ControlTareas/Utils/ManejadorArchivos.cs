@@ -9,6 +9,7 @@ namespace lab05_ControlTareas.Utils
 {
     public class ManejadorArchivos
     {
+        public string folder { get; set; }
         public string fileName { get; set; }
         public string path { get; set; }
 
@@ -18,11 +19,13 @@ namespace lab05_ControlTareas.Utils
             this.path = path;
         }
 
+        
         public void crearArchivoUsuario()
         {
+
             if (!File.Exists(this.path))
             {
-                
+
                 using (StreamWriter sw = File.CreateText(this.path))
                 {
                 }

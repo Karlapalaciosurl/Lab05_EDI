@@ -58,10 +58,23 @@ namespace lab05_ControlTareas.Controllers
                     if (usuarioRegistrado.rol == "Developer")
                     {
                         folder = Path.Combine(_hostingEnvironment.WebRootPath, "Developers");
+                        
+                        if (!Directory.Exists(folder))
+                        {
+
+                            Directory.CreateDirectory(folder);
+                        }
+
+
                     }
                     else
                     {
                         folder = Path.Combine(_hostingEnvironment.WebRootPath, "ProductManagers");
+                        if (!Directory.Exists(folder))
+                        {
+
+                            Directory.CreateDirectory(folder);
+                        }
                     }
 
                     path = Path.Combine(folder, fileName + ".csv");

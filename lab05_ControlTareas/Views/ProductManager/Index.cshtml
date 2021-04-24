@@ -1,0 +1,21 @@
+﻿@using lab05_ControlTareas.Utils
+@using lab05_ControlTareas.Models
+
+@{
+    ViewBag.Title = "Agenda";
+}
+
+
+<div class="container mt-5 mb-5">
+    <h2 class="text-center mb-3">Hola @Storage.Instance.usuarioActual.nombreUsuario, estas son las task de tu equipo de trabajo. </h2>
+    @foreach (CeldaHash currentTask in Storage.Instance.hashTable)
+    {
+        if (currentTask.key != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+                <strong>@currentTask.key</strong> @currentTask.taskDetails.tituloTask -- @currentTask.taskDetails.descripcionTask -- @currentTask.taskDetails.fecha
+            </div>
+        }
+    }
+
+</div>

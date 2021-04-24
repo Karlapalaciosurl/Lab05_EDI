@@ -21,5 +21,7 @@ namespace lab05_ControlTareas.Utils
 
         public usuario usuarioActual = new usuario();
         public List<usuario> usuariosRegistrados = new List<usuario>();
+        public CeldaHash hashTableInitialization = new CeldaHash();
+        public List<CeldaHash> hashTable = new List<CeldaHash>();
     }
 }

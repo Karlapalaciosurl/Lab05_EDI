@@ -9,6 +9,10 @@
     {
       "library": "twitter-bootstrap@4.6.0",
       "destination": "wwwroot/twitter-bootstrap/"
+    },
+    {
+      "library": "bootstrap-datepicker@1.9.0",
+      "destination": "wwwroot/bootstrap-datepicker/"
     }
   ]
 }

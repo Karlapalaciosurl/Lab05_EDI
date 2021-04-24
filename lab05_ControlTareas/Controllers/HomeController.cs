@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using lab05_ControlTareas.Utils;
 using System.Threading.Tasks;
 
 namespace lab05_ControlTareas.Controllers
@@ -19,6 +20,10 @@ namespace lab05_ControlTareas.Controllers
 
         public IActionResult Index()
         {
+            if (Storage.Instance.hashTable.Count == 0)
+            {
+                Storage.Instance.hashTableInitialization.insertEmptyCells();
+            }
             return View();
         }
 

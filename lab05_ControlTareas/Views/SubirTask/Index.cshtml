@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Subir Task";
+}
+
+<div class="card mt-4 ml-auto mr-auto" style="box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.3); width:40%;">
+
+    <div class="card-body m-auto text-center">
+        <form method="post" action="@Url.Action("Index", "SubirTask")" class="d-flex flex-column align-items-center text-center">
+            <div class="form-group">
+                <h3>Sube tu Task</h3>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="TaskTitle" placeholder="Task Title" required>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="ProyectName" placeholder="Proyect Name" required>
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" name="TaskDescription" placeholder="Task Descripction" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Selecciona Prioridad</label>
+                <select class="form-control" name="Priority" required>
+                    <option value="Level1_50">Importante</option>
+                    <option value="Level51_100">No Importante</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <input class="form-control" id="datepicker" name="Date" data-date-format="dd/mm/yyyy" data-provide="datepicker" placeholder="Fecha Entrega">
+            </div>
+
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Subir Tarea</button>
+            </div>
+
+            <hr />
+
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('#datetimepicker').datetimepicker({
+        pickTime: false
+    });
+    $('#datepicker').datepicker({
+        format: 'dd/mm/yyyy'
+    });
+</script>
+
+

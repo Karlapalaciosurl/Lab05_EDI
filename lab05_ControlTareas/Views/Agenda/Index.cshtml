@@ -1,0 +1,31 @@
+﻿@using lab05_ControlTareas.Utils
+@using lab05_ControlTareas.Models
+
+@{
+    ViewBag.Title = "Schedule";
+}
+
+
+<div class="container mt-5 mb-5">
+    <h2 class="text-center mb-3">Hola @Storage.Instance.usuarioActual.nombreUsuario, Estas son tus tareas. </h2>
+    @foreach (lab05_ControlTareas.Models.Task currentTask in Storage.Instance.usuarioActual.tareasAgendadas.IenumColaPrioridad)
+    {
+        if (currentTask.tituloTask.Equals(Storage.Instance.usuarioActual.tareasAgendadas.Peek().tituloTask))
+        {
+            <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+                <strong>@currentTask.tituloTask</strong> @currentTask.descripcionTask -- @currentTask.nombreProyecto -- @currentTask.fecha
+                <button type="submit" class="close">
+                    <span aria-hidden="true"><a href="@Url.Action("finalizarTask","Agenda")">&times;</a></span>
+                </button>
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+                <strong>@currentTask.tituloTask</strong> @currentTask.descripcionTask -- @currentTask.nombreProyecto -- @currentTask.fecha
+            </div>
+        }
+
+    }
+
+</div>

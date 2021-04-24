@@ -1,6 +1,6 @@
 ﻿@using lab05_ControlTareas.Utils
 <div class="container-fluid">
-    <div class="row float-md-right float-lg-right float-right">
+    <div class="row mt-3">
         <h1 class="display-4 text-muted">Hola <span class="font-weight-bolder">@Storage.Instance.usuarioActual.rol</span>, @Storage.Instance.usuarioActual.nombreUsuario</h1>
     </div>
 </div>
@@ -8,11 +8,12 @@
 
 <style>
     .container-fluid {
+        display:flex;
+        justify-content:center;
         width: 100%;
-        height:88vh;
+        height: 88vh;
         background-image: url("/svg/waves_landing.svg");
-        background-repeat:no-repeat;
-        background-position:right;
-        background-size:contain;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 </style>

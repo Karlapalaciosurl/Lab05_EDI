@@ -8,7 +8,18 @@
         <div class="card col-12 col-sm-12 col-md-7" style="box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.3); width:40%;">
             <div class="card-body m-auto text-center">
                 <form method="post" action="@Url.Action("Index", "Login")" class="d-flex flex-column align-items-center text-center">
-
+                    @{
+                        if (TempData["mensajeInicioSesion"] == null || TempData["mensajeInicioSesion"] == "")
+                        {
+                            <div></div>
+                        }
+                        else
+                        {
+                            <div class="alert alert-danger" role="alert">
+                                <p>@TempData["mensajeInicioSesion"]</p>
+                            </div>
+                        }
+                    }
 
                     <div class="form-group">
                         <h3>Login</h3>

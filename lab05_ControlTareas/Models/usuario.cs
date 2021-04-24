@@ -38,7 +38,7 @@ namespace lab05_ControlTareas.Models
             }
             else
             {
-                return Storage.Instance.usuariosRegistrados.Find(user => user.nombreUsuario.Equals(nombreUsuario));
+                return Storage.Instance.usuariosRegistrados.Find(user => user.nombreUsuario.Equals(nombre));
             }
         }
 

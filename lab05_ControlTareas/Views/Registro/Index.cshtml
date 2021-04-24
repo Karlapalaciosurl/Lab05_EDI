@@ -8,7 +8,21 @@
         <div class="card col-12 col-sm-12 col-md-7" style="box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.3); width:40%;">
 
             <div class="card-body">
-                <form method="post" action="@Url.Action("", "")" class="d-flex flex-column align-items-center text-center">
+                <form method="post" action="@Url.Action("Index", "Registro")" class="d-flex flex-column align-items-center text-center">
+                    @{
+                        if (TempData["mensajeRegistro"] != null || TempData["mensajeRegistro"] != "")
+                        {
+                            <div class="alert alert-danger" role="alert">
+                                <p>@TempData["mensajeRegistro"]</p>
+                            </div>
+
+                        }
+                        else
+                        {
+                            <div></div>
+                        }
+
+                    }
 
                     <div class="form-group">
                         <h3>Registro</h3>
@@ -37,7 +51,7 @@
                     <hr />
 
                     <div class="form-group">
-                        <span>Ya tengo una cuenta, <a href="@Url.Action("", "")" style="color:#6ecadc;">Iniciar Sesion</a></span>
+                        <span>Ya tengo una cuenta, <a href="@Url.Action("Index", "Login")" style="color:#6ecadc;">Iniciar Sesion</a></span>
                     </div>
                 </form>
             </div>

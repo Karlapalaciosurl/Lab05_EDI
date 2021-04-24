@@ -22,7 +22,12 @@ namespace lab05_ControlTareas.Controllers
             return View();
         }
 
-        
-        
+        public IActionResult userHome()
+        {
+            return View("userHome");
+        }
+
+
+
     }
 }

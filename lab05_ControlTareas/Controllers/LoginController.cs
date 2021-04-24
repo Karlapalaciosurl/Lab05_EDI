@@ -46,7 +46,7 @@ namespace lab05_ControlTareas.Controllers
                     {
                         mensajeInicioSesion = "";
                         Storage.Instance.usuarioActual = usuarioActual.inicioSesionUsuario(username, password);
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("userHome", "Home");
                     }
                 }
 

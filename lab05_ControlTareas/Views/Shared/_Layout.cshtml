@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using lab05_ControlTareas.Utils;
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -8,17 +9,54 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="@Url.Action("Index", "Home")">TaskApp</a>
+        @{
+            if (Storage.Instance.usuarioActual.nombreUsuario != null)
+            {
+                <a class="navbar-brand" href="@Url.Action("userHome", "Home")">TaskApp</a>
+            }
+            else { 
+                <a class="navbar-brand" href="@Url.Action("Index", "Home")">TaskApp</a>
+            }
+        }
+        
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse p-2" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                @*<li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>*@
-            </ul>
+                <li class="nav-item">
+                    @{
+                        switch (Storage.Instance.usuarioActual.rol)
+                        {
+                            case "Developer":
+                                {
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("","")">Crear nueva Tarea</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("","")">Agenda</a>
+                                </li>
+                            }
+                            break;
+
+                        case "ProductManager":
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("","")">Dashboard</a>
+                                </li>
+                            }
+                            break;
+
+                        default:
+                            <li class="nav-item">
+                            </li>
+                            break;
+                    }
+
+                    }
+                    </li>
+                </ul>
             <ul class="navbar-nav ">
                 <li class="nav-item">
                     <a class="nav-link" href="@Url.Action("Index","Login")">Iniciar Sesion</a>
@@ -26,8 +64,8 @@
             </ul>
         </div>
     </nav>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div class="">
+        <main role="main" class="">
             @RenderBody()
         </main>
     </div>
